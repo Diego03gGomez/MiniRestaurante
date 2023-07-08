@@ -1,14 +1,20 @@
 <template lang="">
     <div>
 
+
+       
+
+
+
+
 <header>
 
 <div class="cont_menu">
-    <i class="fa-solid fa-receipt cuenta2"></i>
+    <i v-on:click="ocultar_menu()"   class="fa-solid fa-receipt cuenta2"></i>
 
 
    
-<h1>Burguer    <img class="logo" src="/imagenes/logo.jpg" alt=""></h1>
+<h1 v-on:click="ocultar_cuenta()"   >Burguer<img class="logo" src="/imagenes/logo.jpg" alt=""></h1>
 
 <nav>
     <div ref="carrito" class="carrito mostrar">
@@ -36,7 +42,7 @@
 
 
 <ul class="nav"  >
-    <a class="cuenta1" href="">Ver la cuenta</a>
+    <a v-on:click="ocultar_menu()"    class="cuenta1" href="#">Ver la cuenta</a>
     <a class="menu"   href="#titulo_menu">Menues</a>
 <a  class=" carrito1  mostrar_carrito" v-on:click="ocultar()"  href="#"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
 <a class="mostrar_carrito"  v-on:click="ocultar()"    ><i class="fa-solid fa-cart-shopping carrito2"></i></a>
@@ -57,6 +63,8 @@
 
 
 </header>
+<div class="contenido_principal"  >
+
 <div id="fondo_baner">
 
     <div class="cont_baner">
@@ -99,11 +107,11 @@
 <div class="descripcion">
 
 <h2>{{e.nombre}}</h2>
-<h3>Precio: ${{e.precio}}</h3>
+<h3>{{e.precio}}</h3>
 <h4>{{e.descripcion}}</h4>
 <img class="estrellas" src="/imagenes/estrellas.jpeg" alt="">
 </div>
-<button v-on:click="agregar($event)" class="btn_agregar" href="">Agregar al carrito</button>
+<button v-on:click="agregar($event)" class="btn_agregar" href="">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></button>
 
 
 
@@ -118,7 +126,20 @@
 
 </div>
 
+<footer>
+<div class="cont_footer">
+<h3>Copyright ©BurgerRestaurant.com</h3>
 
+<h3> <a href="https://github.com/Diego03gGomez/MiniRestaurante" target="blank" >Diego Gomez: <i class="fa-brands fa-github"></i></a>  </h3>
+  
+
+</div>
+
+ </footer>
+        </div>
+
+
+<cuenta class="cuenta ocultar  "   :arrayrecibido="carrito"  ></cuenta>
 
    
     </div>
@@ -193,6 +214,8 @@
 
 
 <script>
+import cuenta from './cuenta.vue';
+
 export default {
     data() {
         return {
@@ -243,6 +266,9 @@ carrito : [
         }
     },
 
+    components: {
+        cuenta,
+    },
 
 
 
@@ -281,6 +307,26 @@ this.carrito.splice(index,1 );
 
 ocultar(){
 this.$refs.carrito.classList.toggle('mostrar');
+
+},
+
+
+
+ocultar_cuenta(){
+    let $cuenta = document.querySelector(".cuenta");
+$cuenta.classList.add("ocultar")
+
+let $contenido = document.querySelector(".contenido_principal");
+$contenido.classList.remove("ocultar")
+
+},
+
+ocultar_menu(){
+    let $cuenta = document.querySelector(".cuenta");
+$cuenta.classList.remove("ocultar")
+
+let $contenido = document.querySelector(".contenido_principal");
+$contenido.classList.add("ocultar")
 
 }
 
@@ -378,6 +424,36 @@ this.$refs.carrito.classList.toggle('mostrar');
 
 
 <style scoped>
+.fa-github {
+color: white;
+font-size: 30px;
+
+}
+
+footer{
+  background-color: black;
+  padding: 20px 0;
+ 
+  
+}
+
+.cont_footer {
+
+margin: auto;
+width: 80%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+color: white;
+font-family: 'PT Sans', sans-serif;
+}
+
+.cont_footer a{
+  text-decoration: none;
+  color: white;
+}
+
+
 
 header{
     background-color:#17181b
@@ -454,6 +530,7 @@ padding: 5px 0;
     border-color: #fbc500;
     border-style: solid;
     border-radius: 8px;
+        font-family: 'PT Sans', sans-serif;
 }
 
 .btn_agregar:hover{
@@ -517,6 +594,10 @@ padding: 5px 10px;
 }
 
 
+.ocultar{
+  display: none;
+}
+
 
 
 
@@ -538,7 +619,7 @@ padding: 5px 10px;
     border-radius: 2em;
     text-decoration: none;
     font-weight: bold;
-    color: darkblue;
+    color:#17181b;
   padding: 10px;
   font-size: 15px;
 }
@@ -551,8 +632,12 @@ span{
 .titulo_carrito{
     text-align: center;
     font-size: 20px;
-    color: white;
 }
+
+.titulo_carrito h1{
+    color:#17181b;
+}
+
 
 .mostrar{
     transition: all 0.9s;
@@ -576,7 +661,7 @@ flex-grow: 3;
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    background-color: red;
+  
     /*height: 71vh;*/
     height: 100%;
     padding-top: 200px;
@@ -591,7 +676,7 @@ flex-grow: 3;
   /*  background-color: brown;*/
 margin: auto;
 
-    width: 80%;
+    width: 70%;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -632,7 +717,7 @@ justify-content: center;
 
 .carrito{
     background-color: black;
-    top: 74px;
+    top: 80px;
   
 }
 
@@ -641,7 +726,12 @@ justify-content: center;
 width: 100px;
 height: 90px;
 border-radius: 2em;
+
 }
+.cont_menu h1{
+    cursor: pointer;
+}
+
 
 .titulo_menu_container{
 

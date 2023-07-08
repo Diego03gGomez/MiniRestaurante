@@ -10,7 +10,7 @@ import restaurante from './components//restaurante.vue';
 
 
 
- 
+
   </div>
 </template>
 
