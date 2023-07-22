@@ -12,7 +12,7 @@
 <div class="cont_menu">
     <i v-on:click="ocultar_menu()"   class="fa-solid fa-receipt cuenta2"></i>
 
-<div onclick="window.location.href='App.vue;'"  class="logo_oculto"   > <img    src="/imagenes/logo.jpg" alt=""></div>
+<div v-on:click="ocultar_cuenta()" class="logo_oculto"   > <img    src="/imagenes/logo.jpg" alt=""></div>
    
 <h1 v-on:click="ocultar_cuenta()"   >Burguer<img class="logo" src="/imagenes/logo.jpg" alt=""></h1>
 
