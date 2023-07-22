@@ -18,10 +18,10 @@
 
 <nav>
     <div ref="carrito" class="carrito mostrar">
-<div class="titulo_carrito"  >
+<!----<div class="titulo_carrito"  >
     <h1>Carrito</h1>
 
-</div>
+</div>-->
     
 
 
@@ -44,7 +44,7 @@
 <ul class="nav"  >
     <a v-on:click="ocultar_menu()"    class="cuenta1" href="#">Ver la cuenta</a>
     <a class="menu"   href="#titulo_menu">Menues</a>
-<a  class=" carrito1  mostrar_carrito" v-on:click="ocultar()"  href="#"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
+<a  class=" carrito1  mostrar_carrito" v-on:click="ocultar()"  href="#"><i class="fa-solid fa-cart-shopping"></i></a>
 <a class="mostrar_carrito"  v-on:click="ocultar()"    ><i class="fa-solid fa-cart-shopping carrito2"></i></a>
 </ul>
 
@@ -68,7 +68,7 @@
 <div id="fondo_baner">
 
     <div class="cont_baner">
-        <h1>Welcome to <br> the BurgerRestaurant</h1>
+        <h1>WELCOME TO<br> THE BURGERRESTAURANT</h1>
         <h3>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus reprehenderit <br> accusamus
          quidem iste nihil hic, repellat harum temporibus enim odit necessitatibus vel <br> dolorum nobis rerum eaque fugit nisi deleniti quos.
@@ -531,6 +531,7 @@ padding: 5px 0;
     border-style: solid;
     border-radius: 8px;
         font-family: 'PT Sans', sans-serif;
+        font-family: 'Inter', sans-serif;
 }
 
 .btn_agregar:hover{
@@ -551,6 +552,7 @@ color: white;
 gap: 20px;
 background-color: rgb(41, 41, 41);
 border-radius: 8px;
+
 }
 
 
@@ -591,6 +593,7 @@ padding: 5px 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -608,9 +611,13 @@ padding: 5px 10px;
     border-radius: 8px;
 }
 
+.imagen2{
+    text-align: center;
+}
 
 .imagen2 img{
     width: 100%;
+    
 }
 
 .eliminar_g{
@@ -657,7 +664,8 @@ flex-grow: 3;
 
 
 #fondo_baner{
-    background: linear-gradient(to right, #020202cf, #00000057, #00000014), url(https://images.pexels.com/photos/3219483/pexels-photo-3219483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    
+    background: linear-gradient(to right, #02020291, #01010166, #0101010d), url(https://fast-food.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/01/background-burgers-home-top.jpg);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
@@ -666,7 +674,7 @@ flex-grow: 3;
     height: 100%;
     padding-top: 200px;
     
-    padding-bottom: 200px;
+    padding-bottom: 250px;
     object-fit: cover;
 }
 
@@ -678,6 +686,7 @@ margin: auto;
 
     width: 70%;
     font-family: 'PT Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .cont_baner h1{
@@ -693,6 +702,7 @@ font-family: 'Oswald', sans-serif;
 .cont_baner h3{
     color: rgb(255 255 255 / 70%);
 margin: 15px auto;
+line-height: 30px;
 }
 
 .cont_baner a{
@@ -791,6 +801,26 @@ font-family: 'Poppins', sans-serif;
     color: white;
 }
 
+.carrito{
+    width: 50%;
+}
+.imagen{
+    overflow: hidden;
+    transition: all 0.90s;
+}
+
+.imagen img:hover{
+    transition: all 0.90s;
+    transform: scale(1.2);
+}
+
+.imagen img{
+    transition: all 0.90s;
+}
+
+
+
+
 
 
 
@@ -824,7 +854,7 @@ font-family: 'Poppins', sans-serif;
 
 
 
-@media (max-width: 789px){
+@media (max-width: 800px){
     .cont_hamburguesas{
         grid-template-columns:  1fr;
     }
