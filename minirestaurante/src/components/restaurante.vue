@@ -840,6 +840,10 @@ font-family: 'Poppins', sans-serif;
     width: 40%;
     position: absolute;
     text-align: center;
+ 
+font-family: 'Titillium Web', sans-serif;
+
+
 }
 
 .div_guardado{
@@ -1053,7 +1057,7 @@ display: none;
 }
 
 .carrito{
-    top: 65px;
+    top: 105px;
     gap: 50px;
     width: 100%;
     margin: auto;
