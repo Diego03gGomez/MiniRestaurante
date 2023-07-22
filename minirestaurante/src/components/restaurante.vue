@@ -12,7 +12,7 @@
 <div class="cont_menu">
     <i v-on:click="ocultar_menu()"   class="fa-solid fa-receipt cuenta2"></i>
 
-
+<div  class="logo_oculto"   > <img  src="/imagenes/logo.jpg" alt=""></div>
    
 <h1 v-on:click="ocultar_cuenta()"   >Burguer<img class="logo" src="/imagenes/logo.jpg" alt=""></h1>
 
@@ -31,7 +31,7 @@
 <div class="imagen2"><img :src=e.imagen_p alt=""></div>
 <div class="datos"><h2>{{e.nombre_producto}} <span>(${{e.precioG}})</span> </h2>  </div>
 
-<a v-on:click="eliminar_tarea(index)" class="eliminar_g" href="#">Eliminar</a>
+<a v-on:click="eliminar_tarea(index)" class="eliminar_g" >Eliminar</a>
 </div>
 
 
@@ -467,6 +467,7 @@ header{
     align-items: center;
     justify-content: space-between;
     position: relative;
+    
 }
 
 .cont_menu nav ul{
@@ -482,7 +483,19 @@ header{
     margin: 0 30px;
     font-weight: bold;
  font-size: 24px;
-    
+ font-family: 'Anton', sans-serif;
+font-family: 'Bevan', cursive;
+font-family: 'Corinthia', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Lora', serif;
+
+
+
+
+
+
+ 
 }
 .cont_menu h1{
     font-size: 53px;
@@ -504,7 +517,7 @@ header{
 .carrito{
     transition: all 0.9s;
     opacity: 1;
-    background-color: red;
+  /*  background-color: red;*/
     position: absolute;
 right: 0px;
 top: 35px;
@@ -522,7 +535,7 @@ border-radius: 8px;
     background-color:#fbc500;
     margin: auto;
 width: 100%;
-font-size: 20px;
+font-size: 21px;
 padding: 5px 0;
     color: black;
     text-align: center;
@@ -536,7 +549,8 @@ padding: 5px 0;
 
 .btn_agregar:hover{
     transition: all 0.90s;
-    background-color: #17181b;
+    background-color: rgb(224, 36, 36);
+    border-color: rgb(224, 36, 36);
     color: white;
  
 }
@@ -621,6 +635,7 @@ padding: 5px 10px;
 }
 
 .eliminar_g{
+    cursor: pointer;
     background-color: gold;
     text-align: center;
     border-radius: 2em;
@@ -707,10 +722,11 @@ line-height: 30px;
 
 .cont_baner a{
   
-    background-color:#fbc500;
+    background-color:rgb(224, 36, 36);
+    color: white;
 text-decoration: none;
 font-weight: bold;
-color: black;
+
 font-size: 25px;
 padding: 10px;
 border-radius: 10px;
@@ -819,6 +835,69 @@ font-family: 'Poppins', sans-serif;
 }
 
 
+.carrito{
+  /*  background-color: green;*/
+    width: 40%;
+    position: absolute;
+    text-align: center;
+}
+
+.div_guardado{
+/* background-color: red;*/
+    width: 100%;
+}
+
+.logo_oculto{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -826,8 +905,8 @@ font-family: 'Poppins', sans-serif;
 
 @media (max-width:1188px){
     .cont_hamburguesas{
-        grid-template-columns:  1fr 1fr 1fr;
-        width: 90%;
+        grid-template-columns:  1fr 1fr ;
+        width: 80%;
     }
 
 .carrito{
@@ -841,8 +920,52 @@ font-family: 'Poppins', sans-serif;
     margin: 0 10px;
 }
 
+.div_guardado{
+    padding: 5px 10px;
+}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -876,7 +999,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .cont_baner h1{
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .cont_menu{
@@ -905,13 +1028,110 @@ display: none;
 }
 
 
+.cont_footer{
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+}
 
+.cont_menu h1{
+    display: none;
+}
 
+.div_guardado{
+    display: flex;
+   flex-direction: column;
+   padding: 8px 0px;
+}
+.imagen2 img{
+    width: 80%;
+    height: 280px;
+}
 
+.imagen2{
+    width: 90%;
+}
 
+.carrito{
+    top: 65px;
+    gap: 50px;
+    width: 100%;
+    margin: auto;
+}
+
+.eliminar_g{
+    width: 70%;
+    border-radius: 5px;
+}
+
+.logo_oculto{
+    display: initial;
+    text-align: center;
+}
+
+.logo_oculto img{
+    width: 90px;
+    border-radius: 5em;
+}
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 500px){
+    .imagen2 img{
+        width: 100%;
+    }
+
+    .div_guardado{
+        padding: 8px 0;
+    }
+}
+
+
 
 
 
