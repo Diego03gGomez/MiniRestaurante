@@ -12,7 +12,7 @@
 <div class="cont_menu">
     <i v-on:click="ocultar_menu()"   class="fa-solid fa-receipt cuenta2"></i>
 
-<div  class="logo_oculto"   > <img  src="/imagenes/logo.jpg" alt=""></div>
+<div onclick="window.location.href='index.html;'"  class="logo_oculto"   > <img    src="/imagenes/logo.jpg" alt=""></div>
    
 <h1 v-on:click="ocultar_cuenta()"   >Burguer<img class="logo" src="/imagenes/logo.jpg" alt=""></h1>
 
@@ -320,6 +320,7 @@ let $contenido = document.querySelector(".contenido_principal");
 $contenido.classList.remove("ocultar")
 
 },
+
 
 ocultar_menu(){
     let $cuenta = document.querySelector(".cuenta");
