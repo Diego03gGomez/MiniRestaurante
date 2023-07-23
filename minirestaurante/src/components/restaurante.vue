@@ -43,7 +43,7 @@
 
 <ul class="nav"  >
     <a v-on:click="ocultar_menu()"    class="cuenta1" href="#">Ver la cuenta</a>
-    <a class="menu"   href="#titulo_menu">Menues</a>
+    <a class="menu"   href="#titulo_menu">Menus</a>
 <a  class=" carrito1  mostrar_carrito" v-on:click="ocultar()"  href="#"><i class="fa-solid fa-cart-shopping"></i></a>
 <a class="mostrar_carrito"  v-on:click="ocultar()"    ><i class="fa-solid fa-cart-shopping carrito2"></i></a>
 </ul>
@@ -93,7 +93,7 @@
 
 
 <div class="titulo_menu_container">
-    <h1 id="titulo_menu" >Menues</h1>
+    <h1 id="titulo_menu" >Menus</h1>
 </div>
 
 
